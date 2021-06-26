@@ -1,0 +1,3 @@
+[submodule "components/qpc/qpc"]
+	path = components/qpc/qpc
+	url = https://github.com/sicrisembay/qpc.git
