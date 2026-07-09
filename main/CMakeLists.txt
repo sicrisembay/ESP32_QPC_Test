@@ -1,0 +1,11 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "philo.c"
+        "qf_hooks.c"
+        "table.c"
+    INCLUDE_DIRS
+        "."
+    REQUIRES
+        qpc
+)
