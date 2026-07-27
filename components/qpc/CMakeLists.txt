@@ -3,7 +3,7 @@ set(srcs
     "qpc/src/qf/qep_hsm.c"
     "qpc/src/qf/qep_msm.c"
     "qpc/src/qf/qf_act.c"
-    "qpc/src/qf/qf_actq.c"
+    # "qpc/src/qf/qf_actq.c"
     "qpc/src/qf/qf_defer.c"
     "qpc/src/qf/qf_dyn.c"
     "qpc/src/qf/qf_mem.c"
@@ -12,7 +12,7 @@ set(srcs
     "qpc/src/qf/qf_qeq.c"
     "qpc/src/qf/qf_qmact.c"
     "qpc/src/qf/qf_time.c"
-    "qpc/include/qstamp.c"
+    "qpc/src/qs/qstamp.c"
 )
 
 if(CONFIG_QPC_QSPY_ENABLE)
@@ -30,12 +30,15 @@ idf_component_register(
         ${srcs}
     INCLUDE_DIRS
         "qpc/include"
+        "config"
         "qpc/ports/freertos-esp32"
     PRIV_INCLUDE_DIRS
         "qpc/src"
     REQUIRES
         freertos
 )
+
+target_compile_definitions(${COMPONENT_LIB} PUBLIC QP_CONFIG)
 
 if(CONFIG_QPC_QSPY_ENABLE)
     target_compile_definitions(${COMPONENT_LIB} PUBLIC Q_SPY)

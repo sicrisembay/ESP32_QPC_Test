@@ -4,7 +4,7 @@
 #include "freertos/FreeRTOS.h"
 
 Q_DEFINE_THIS_FILE
-static const char * TAG = "main";
+static const char * TAG = Q_this_module_;   // TODO: sicris
 
 /*
  * small event memory pool

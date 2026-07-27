@@ -8,4 +8,6 @@ idf_component_register(
         "."
     REQUIRES
         qpc
+    PRIV_REQUIRES
+        esp_timer
 )
